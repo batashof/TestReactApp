@@ -17,7 +17,7 @@ class App extends Component {
     for (let i = 0; i < IDs.length; i++) {
       fetch(`https://picurl.herokuapp.com/users/${IDs[i]}`)
           .then(response => response.json())
-          .then(data => this.setState  ({
+          .then(data => this.setState({
             users: [...this.state.users, data.url]
           }));
     }
@@ -28,8 +28,8 @@ class App extends Component {
     return (
         <div className="App">
           {this.state.users.map(user => (
-              <div >
-                <img  className="Img"  src={user} alt="img"/>
+              <div>
+                <img className="Img" src={user} alt="img"/>
               </div>
           ))}
         </div>
